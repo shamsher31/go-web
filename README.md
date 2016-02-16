@@ -6,13 +6,12 @@ heartbeating and initialistion of the go-micro client. In the future go-platform
 
 ## Getting Started
 
-## Prerequisites
+### Prerequisites
 
 Go-web uses a similar pattern to go-micro. Look at the go-micro [readme](https://github.com/micro/go-micro) for 
 starting up the registry.
 
 ### Usage
-
 
 ```golang
 service := web.NewService(
