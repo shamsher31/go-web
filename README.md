@@ -29,3 +29,20 @@ if err := service.Run(); err != nil {
 	log.Fatal(err)
 }
 ```
+
+### Use your own Handler
+
+You might have a preference for a HTTP handler, so use something else. This loses the ability to register endpoints in discovery 
+but we'll fix that soon.
+
+```golang
+import "github.com/gorilla/mux"
+
+r := mux.NewRouter()
+r.HandleFunc("/", indexHandler)
+r.HandleFunc("/objects/{object}", objectHandler)
+
+service := web.NewService(
+	web.Handler(r)
+)
+```
