@@ -1,6 +1,7 @@
 package web
 
 import (
+	"net/http"
 	"time"
 
 	"golang.org/x/net/context"
@@ -15,6 +16,8 @@ type Options struct {
 
 	RegisterTTL      time.Duration
 	RegisterInterval time.Duration
+
+	Handler http.Handler
 
 	// Alternative Options
 	Context context.Context
@@ -81,5 +84,11 @@ func RegisterTTL(t time.Duration) Option {
 func RegisterInterval(t time.Duration) Option {
 	return func(o *Options) {
 		o.RegisterInterval = t
+	}
+}
+
+func WithHandler(h http.Handler) Option {
+	return func(o *Options) {
+		o.Handler = h
 	}
 }

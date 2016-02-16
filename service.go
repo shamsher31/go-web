@@ -126,7 +126,15 @@ func (s *service) start() error {
 	srv.Endpoints = s.srv.Endpoints
 	s.srv = srv
 
-	go http.Serve(l, s.mux)
+	var h http.Handler
+
+	if s.opts.Handler != nil {
+		h = s.opts.Handler
+	} else {
+		h = s.mux
+	}
+
+	go http.Serve(l, h)
 
 	go func() {
 		ch := <-s.exit
