@@ -87,7 +87,7 @@ func RegisterInterval(t time.Duration) Option {
 	}
 }
 
-func WithHandler(h http.Handler) Option {
+func Handler(h http.Handler) Option {
 	return func(o *Options) {
 		o.Handler = h
 	}
