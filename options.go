@@ -11,6 +11,7 @@ type Options struct {
 	Name      string
 	Version   string
 	Id        string
+	Metadata  map[string]string
 	Address   string
 	Advertise string
 
@@ -58,6 +59,13 @@ func Id(id string) Option {
 func Version(v string) Option {
 	return func(o *Options) {
 		o.Version = v
+	}
+}
+
+// Metadata associated with the service
+func Metadata(md map[string]string) Option {
+	return func(o *Options) {
+		o.Metadata = md
 	}
 }
 
