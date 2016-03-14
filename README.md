@@ -1,4 +1,4 @@
-# Go Web
+# Go Web [![GoDoc](https://godoc.org/github.com/micro/go-web?status.svg)](https://godoc.org/github.com/micro/go-web) [![Travis CI](https://travis-ci.org/micro/go-web.svg?branch=master)](https://travis-ci.org/micro/go-web) [![Go Report Card](https://goreportcard.com/badge/micro/go-web)](https://goreportcard.com/report/github.com/micro/go-web)
 
 **Go-web** is a tiny HTTP web server library which leverages [go-micro](https://github.com/micro/go-micro) to create 
 micro web services as first class citizens in a microservice ecosystem. It's merely a wrapper around registration, 
