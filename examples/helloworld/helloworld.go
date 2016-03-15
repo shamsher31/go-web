@@ -2,9 +2,9 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"net/http"
 
-	log "github.com/golang/glog"
 	"github.com/micro/go-web"
 )
 
