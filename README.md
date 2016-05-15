@@ -2,7 +2,7 @@
 
 **Go-web** is a tiny HTTP web server library which leverages [go-micro](https://github.com/micro/go-micro) to create 
 micro web services as first class citizens in a microservice ecosystem. It's merely a wrapper around registration, 
-heartbeating and initialistion of the go-micro client. In the future go-platform features may be included.
+heartbeating and initialization of the go-micro client. In the future go-platform features may be included.
 
 ## Getting Started
 
@@ -13,7 +13,7 @@ starting up the registry.
 
 ### Usage
 
-```golang
+```go
 service := web.NewService(
 	web.Name("go.micro.web.example"),
 	web.Version("latest"),
@@ -35,7 +35,7 @@ if err := service.Run(); err != nil {
 You might have a preference for a HTTP handler, so use something else. This loses the ability to register endpoints in discovery 
 but we'll fix that soon.
 
-```golang
+```go
 import "github.com/gorilla/mux"
 
 r := mux.NewRouter()
